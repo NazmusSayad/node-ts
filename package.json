@@ -1,0 +1,32 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "npm run build;node ./dist --NODE_ENV=production",
+    "serve": "node ./dist --NODE_ENV=production",
+    "dev": "node --watch ./dist --NODE_ENV=development",
+    "debug": "ndb npm run dev"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-master": "latest",
+    "express-mongo-sanitize": "latest",
+    "express-rate-limit": "latest",
+    "helmet": "latest",
+    "manual-node-env": "latest",
+    "mongoose": "latest",
+    "req-error": "latest",
+    "xss-clean": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest"
+  }
+}
