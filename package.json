@@ -24,5 +24,8 @@
     "typescript": "latest",
     "@types/express": "latest",
     "@types/node": "latest"
+  },
+  "engines": {
+    "node": "*"
   }
 }
