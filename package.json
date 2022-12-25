@@ -1,15 +1,11 @@
 {
-  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "npm run build;node ./dist --NODE_ENV=production",
-    "serve": "node ./dist --NODE_ENV=production",
+    "ready": "yarn;yarn build",
+    "start": "node ./dist --NODE_ENV=production",
     "dev": "node --watch ./dist --NODE_ENV=development",
     "debug": "ndb npm run dev"
-  },
-  "engines": {
-    "node": "*"
   },
   "dependencies": {
     "cors": "latest",
