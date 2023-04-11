@@ -971,10 +971,10 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
-express-master@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/express-master/-/express-master-1.0.5.tgz#9601f6de2bd6cd0b50fe17a6145e6cb7385a58e7"
-  integrity sha512-6V/OLzEawkdELek0u6S4FgQG08IFlLZXOUSESei12BxaDJay+pwWConBshEBC579lA0usE5rOfxjoOqpoK7VyA==
+express-master@latest:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/express-master/-/express-master-3.0.9.tgz#f1cde794006f07a8f7aae526ec9e0ab031c5d984"
+  integrity sha512-alGINiHmA2cLD7KDWfZeWufqkOTQuGMCaMzNNcHDZgXsf9Z5Yzgey17Wxcv1RjA6d2ierakJJIhzxQ6g3RcjVg==
 
 express-mongo-sanitize@latest:
   version "2.2.0"

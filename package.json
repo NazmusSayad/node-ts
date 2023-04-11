@@ -1,11 +1,11 @@
 {
   "scripts": {
+    "dev:dev": "node --watch ./dist --NODE_ENV=development",
+    "dev:tsc": "tsc -w",
     "build": "tsc",
-    "watch": "tsc -w",
-    "ready": "yarn;yarn build",
-    "start": "node ./dist --NODE_ENV=production",
-    "dev": "node --watch ./dist --NODE_ENV=development",
-    "debug": "ndb npm run dev"
+    "debug": "ndb npm run dev",
+    "dev": "npm run dev:tsc & npm run dev:dev",
+    "start": "node ./dist --NODE_ENV=production"
   },
   "dependencies": {
     "cors": "latest",
