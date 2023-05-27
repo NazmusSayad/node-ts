@@ -1,5 +1,5 @@
 import express from 'express'
-import expressMaster from 'express-master'
+import extrass from 'extrass'
 import cors from 'cors'
 import xss from 'xss-clean'
 import helmet from 'helmet'
@@ -13,12 +13,11 @@ app.use(cors({ origin: /.*/ }))
 app.use(helmet())
 app.use(
   rateLimit({
-    windowMs: 60 * 60 * 1000,
     max: 1000,
+    windowMs: 60 * 60 * 1000 /* 1 Hour */,
     message: {
       status: 'fail',
-      message:
-        'Too many requests from this IP, please try again after a deep sleep',
+      message: 'Too many requests, please try again later',
     },
   })
 )
@@ -30,10 +29,9 @@ app.use(express.json({ limit: '8kb' }))
 app.use(mongoSanitize())
 app.use(xss())
 
-// Routes
+// Router
 app.use(router)
 
-// Utils
-expressMaster(app, { ping: '/ping' })
-
+// Finisher
+extrass(app, { ping: '/ping' })
 export default app

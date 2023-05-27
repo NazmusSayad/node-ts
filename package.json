@@ -2,28 +2,27 @@
   "scripts": {
     "dev:dev": "node --watch ./dist --NODE_ENV=development",
     "dev:tsc": "tsc -w",
-    "build": "tsc",
-    "debug": "ndb npm run dev",
     "dev": "npm run dev:tsc & npm run dev:dev",
+    "debug": "ndb npm run dev",
+    "build": "tsc",
     "start": "node ./dist --NODE_ENV=production"
   },
   "dependencies": {
     "cors": "latest",
     "dotenv": "latest",
     "express": "latest",
-    "express-master": "latest",
     "express-mongo-sanitize": "latest",
     "express-rate-limit": "latest",
+    "extrass": "latest",
     "helmet": "latest",
     "manual-node-env": "latest",
     "mongoose": "latest",
-    "req-error": "latest",
     "xss-clean": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
     "@types/express": "latest",
-    "@types/node": "latest"
+    "@types/node": "latest",
+    "typescript": "latest"
   },
   "engines": {
     "node": "*"

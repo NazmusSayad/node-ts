@@ -4,5 +4,5 @@ config()
 
 console.log('---', new Date().toString())
 
-import './database'
+import './db'
 import './server'
