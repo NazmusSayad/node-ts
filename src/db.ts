@@ -1,16 +1,19 @@
 import mongoose from 'mongoose'
 mongoose.set('strictQuery', false)
 
-const mongoUri = process.env.DB
+const mongoUrl = process.env.DB_URL
+const mongoPass = process.env.DB_PASS
 
-if (!mongoUri) {
-  console.error('!!!', 'MongoDB env variable missing...')
-} else
+if (mongoUrl && mongoPass) {
+  const uri = mongoUrl.replace('<password>', mongoPass)
   mongoose
-    .connect(mongoUri)
+    .connect(uri)
     .then(() => {
       console.log('>>>', 'MongoDB connected successfully...')
     })
     .catch(() => {
       console.error('!!!', 'MongoDB connection failed...')
     })
+} else {
+  console.error('!!!', 'MongoDB env variable missing...')
+}
