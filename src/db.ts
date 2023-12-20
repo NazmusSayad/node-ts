@@ -1,13 +1,5 @@
-import mongoose from 'mongoose'
-import env from './env'
-mongoose.set('strictQuery', false)
+import { PrismaClient } from '@prisma/client'
+const db = new PrismaClient()
 
-const uri = env.DB_URL.replace('<password>', env.DB_PASS)
-mongoose
-  .connect(uri)
-  .then(() => {
-    console.log('>>>', 'MongoDB connected successfully...')
-  })
-  .catch(() => {
-    console.error('!!!', 'MongoDB connection failed...')
-  })
+export * from '@prisma/client'
+export default db

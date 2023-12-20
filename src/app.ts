@@ -1,12 +1,15 @@
 import express from 'express'
-import extrass from 'extrass'
+import { createExtrass } from 'extrass'
 import cors from 'cors'
+// @ts-ignore
 import xss from 'xss-clean'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
-import mongoSanitize from 'express-mongo-sanitize'
 import router from './router'
 const app = express()
+const extrass = createExtrass({
+  ping: '/ping',
+})
 
 // Safety
 app.use(cors({ origin: /.*/ }))
@@ -26,12 +29,11 @@ app.use(
 app.use(express.json({ limit: '8kb' }))
 
 // XXS
-app.use(mongoSanitize())
 app.use(xss())
 
 // Router
 app.use(router)
 
 // Finisher
-extrass(app, { ping: '/ping' })
+extrass.handle(app)
 export default app

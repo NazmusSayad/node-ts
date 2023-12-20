@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "outDir": "./dist",
+    "target": "ESNext",
     "module": "CommonJS",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["./src"]
 }

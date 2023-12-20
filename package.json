@@ -1,27 +1,29 @@
 {
   "scripts": {
-    "dev:dev": "node --watch ./dist --NODE_ENV=development",
-    "dev:tsc": "tsc -w",
-    "dev": "npm run dev:tsc & npm run dev:dev",
+    "dev": "nodemon -r tsconfig-paths/register ./src/index.ts --NODE_ENV=development",
+    "start": "ts-node -r tsconfig-paths/register ./src/index.ts --NODE_ENV=production",
     "debug": "ndb npm run dev",
-    "build": "tsc",
-    "start": "node ./dist --NODE_ENV=production"
+    "build": "prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "cli-node-env": "latest",
     "cors": "latest",
     "dotenv": "latest",
     "express": "latest",
-    "express-mongo-sanitize": "latest",
     "express-rate-limit": "latest",
     "extrass": "latest",
     "helmet": "latest",
-    "manual-node-env": "latest",
-    "mongoose": "latest",
+    "rype": "^2.0.4",
     "xss-clean": "latest"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "latest",
     "@types/node": "latest",
+    "prisma": "^5.7.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "latest"
   },
   "engines": {

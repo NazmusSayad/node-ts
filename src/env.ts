@@ -1,6 +1,8 @@
-import { string } from 'extrass'
+import { env, r } from 'rype'
 
-export default r.env({
-  DB_URL: string,
-  DB_PASS: string,
+export default env({
+  DATABASE_URL: r.string().default('mongodb://localhost:27017'),
+  DIRECT_URL: r.string().optional(),
 })
+
+
