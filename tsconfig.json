@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
     "module": "CommonJS",
     "esModuleInterop": true,
     "strict": true,
-    "noEmit": true,
-    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
     }
