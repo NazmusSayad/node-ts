@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "tsx --watch -r tsconfig-paths/register ./src/index.ts --NODE_ENV=development",
     "start": "tsx -r tsconfig-paths/register ./src/index.ts --NODE_ENV=production",
+    "tsc": "tsc --noEmit --watch",
     "debug": "ndb npm run dev",
     "build": "prisma generate"
   },
