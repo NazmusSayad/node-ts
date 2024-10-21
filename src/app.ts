@@ -1,6 +1,7 @@
 import express from 'express'
 import { createExtrass } from 'extrass'
 import cors from 'cors'
+import morgan from 'morgan'
 // @ts-ignore
 import xss from 'xss-clean'
 import helmet from 'helmet'
@@ -13,6 +14,7 @@ const extrass = createExtrass({
 
 // Safety
 app.use(cors({ origin: /.*/ }))
+app.use(morgan('dev'))
 app.use(helmet())
 app.use(
   rateLimit({

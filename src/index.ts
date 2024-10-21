@@ -9,7 +9,7 @@ import './db'
 import './server'
 
 try {
-  require('./_lab')
+  if (env.isDev) require('./__lab__')
 } catch (err) {
   console.error(err)
 }
